@@ -1,0 +1,64 @@
+<%- include('partials/header'); -%>
+
+     <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="/db" method="post" autocomplete="off">  
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="itemId" placeholder="new item id">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="itemName" placeholder="new item name">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" name="price" placeholder="new item price">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" name="quantity" placeholder="new item quantity">
+                        </div>
+                        <button class="btn btn-outline-secondary mt-1 mb-3" type="submit" id="button-addon1">ADD ITEM</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bg-white">
+        
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% items.forEach((element) =>{ %>
+                    <tr>
+                        <th scope="row"><%= element.itemId %></th>
+                        <td><%= element.itemName%></td>
+                        <td><%= element.price%></td>
+                        <td><%= element.quantity%></td>
+                    </tr>
+                <%})%>
+            </tbody>
+          </table>
+    </div>
+    
+
+<%- include('partials/footer'); -%>

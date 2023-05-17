@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #AFD3E2;
+}
+
+.bg-navy{
+    background-color: #146C94;
+    
+}
+
+.nav-color{
+    color: #F6F1F1;
+}
+
+.container img{
+    height: 15rem;
+    width: 15rem;
+}
+
+.img-fluid {
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+  }
+  
+  

@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+    <form action="/db" method="post" autocomplete="off">
+        <label for="itemId">Id</label>
+        <input type="text" name="itemId">
+
+        <label for="itemName">Item name</label>
+        <input type="text" name="itemName">
+
+        <label for="price">Price</label>
+        <input type="number" name="price">
+
+        <label for="quantity">Quantity</label>
+        <input type="number" name="quantity">
+
+        <button type="submit">add</button>
+        <button type="reset">reset</button>
+    </form>
+
+    <div class="container bg-white">
+        <% items.forEach((element) =>{ %>
+            <ul>
+                <li><%= element.itemId %> <%= element.itemName %> <%= element.price %> <%= element.quantity %></li>
+            </ul>
+            
+        <%})%>
+    </div>
+    
+
+<%- include('partials/footer'); -%>
