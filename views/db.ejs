@@ -45,20 +45,47 @@
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
                 <% items.forEach((element) =>{ %>
-                    <tr>
-                        <th scope="row"><%= element.itemId %></th>
-                        <td><%= element.itemName%></td>
-                        <td><%= element.price%></td>
-                        <td><%= element.quantity%></td>
-                    </tr>
+                        <tr>
+                            <th scope="row"><%= element.itemId %></th>
+                            <td><%= element.itemName%></td>
+                            <td><%= element.price%></td>
+                            <td><%= element.quantity%></td>
+                            <td><button type="submit" class="btn btn-danger deleteItemButton" value="<%= element.itemId %>"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                        </tr>
                 <%})%>
             </tbody>
           </table>
     </div>
-    
 
+    <div class="deletePopupContainer">
+        <div class="deletePopup">
+            <div class="cancelMenu">
+                <i class="fa-solid fa-x cancel-button"></i>
+            </div>
+            <div class="deleteMenu-body">
+                <form action="/delete" method="post">
+                    <span class="delete-text">Delete x ?</span>
+                    <div class="mb-3 row">
+                        <label for="staticEmail" class="col-sm-2 col-form-label">User</label>
+                        <div class="col-sm-10">
+                          <input type="text" readonly class="form-control-plaintext" value="admin">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control">
+                        </div>
+                    </div>
+                    <button type="sumbit" class="btn btn-danger btn-delete-submit" name="id" value=" ">DELETE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 <%- include('partials/footer'); -%>

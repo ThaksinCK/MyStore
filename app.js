@@ -54,12 +54,14 @@ app.post('/db', (req, res)=>{
         quantity : quantity
     });
 
-    newItemData.save();
-
+    newItemData.save().then(res.redirect('/db'));
     console.log(`${itemId} ${itemName} ${price} ${quantity}`);
-    
-    res.redirect('/db');
 })
+
+app.post('/delete', (req, res)=>{
+    const deletedItem = req.body.id;
+    Item.deleteOne({itemId : deletedItem}).then(res.redirect('/db'));
+});
 
 app.listen(port, function(){
     console.log(`server started at port: ${port}`)

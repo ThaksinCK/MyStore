@@ -24,4 +24,45 @@ body{
     object-fit: cover;
   }
   
-  
+.deletePopupContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.3);
+    top: 0;
+    left: 0;
+    
+}
+
+.deletePopupContainer-active{
+    display: flex;
+}
+
+.deletePopup{
+    background-color: white;
+    height: auto;
+    width: 500px;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+.cancelMenu{
+    text-align: end;
+    
+}
+
+.cancelMenu i{
+    cursor: pointer;
+    font-size: large;
+}
+
+.cancelMenu i:hover{
+    color: red;
+}
+
+.deleteMenu-body{
+    text-align: center;
+}
